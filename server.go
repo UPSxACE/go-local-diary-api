@@ -30,8 +30,7 @@ func main() {
 	e.Renderer = t
 
 	// Routes
-	e.GET("/", controllers.IndexController)
-	e.POST("/htmx/change-message", controllers.HtmxChangeMessageController)
+	controllers.SetIndexRoutes(e)
 
 	// Start server
 	e.Logger.Fatal(e.Start(":1323"))

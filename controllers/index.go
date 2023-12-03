@@ -8,7 +8,12 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-func IndexController(c echo.Context) error {
+func SetIndexRoutes(e *echo.Echo) {
+	e.GET("/", GetIndexController)
+	e.POST("/htmx/change-message", HtmxChangeMessage)
+}
+
+func GetIndexController(c echo.Context) error {
 	return c.Render(http.StatusOK, "index", map[string]interface{}{
 		"Message": "Hello World!",
 	})
@@ -18,7 +23,7 @@ type ChangeMessageRequest struct {
 	Name string `json:"name" form:"name" query:"name"`
 }
 
-func HtmxChangeMessageController(c echo.Context) error {
+func HtmxChangeMessage(c echo.Context) error {
 	request := new(ChangeMessageRequest)
 	if err := c.Bind(request); err != nil {
 		return c.String(http.StatusBadRequest, "bad request")
