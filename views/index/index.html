@@ -17,7 +17,7 @@
     <form
       hx-indicator=".htmx-indicator"
       hx-target="#message"
-      hx-post="/change-message"
+      hx-post="htmx/change-message"
     >
       <!-- hx-boost="true"
       onsubmit="event.preventDefault();" -->
@@ -26,6 +26,7 @@
     </form>
     <div class="htmx-indicator">Loading...</div>
     <script src="https://unpkg.com/htmx.org@1.9.9"></script>
+    <script src="/public/test.js"></script>
   </body>
 </html>
 {{end}}
