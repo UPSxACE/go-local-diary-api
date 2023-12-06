@@ -6,8 +6,8 @@ import (
 	"log"
 	"time"
 
-	"github.com/UPSxACE/go-local-diary-api/controllers"
-	"github.com/UPSxACE/go-local-diary-api/views"
+	"github.com/UPSxACE/go-local-diary-api/server/controllers"
+	"github.com/UPSxACE/go-local-diary-api/server/views"
 	"github.com/boltdb/bolt"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
@@ -48,8 +48,8 @@ func main() {
 	}
 
 	// Pre-compile templates in views subdirectories, and subdirectories of those subdirectories
-	tBuilder :=  template.Must(template.ParseGlob("views/*/*.html"));
-	tBuilder = template.Must(tBuilder.ParseGlob("views/*/*/*.html"))
+	tBuilder :=  template.Must(template.ParseGlob("server/views/*/*.html"));
+	tBuilder = template.Must(tBuilder.ParseGlob("server/views/*/*/*.html"))
 	t := &views.Template{
 		Templates: tBuilder,
 	}
