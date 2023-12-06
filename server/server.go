@@ -62,7 +62,7 @@ func main() {
 	e.Use(middleware.Recover())
 
 	// Serve static files
-	e.Static("/public", "public")
+	e.Static("/public", "/server/public")
 
 	e.Renderer = t
 
