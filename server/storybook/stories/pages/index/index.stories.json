@@ -1,0 +1,14 @@
+{
+  "title": "Index Page",
+  "parameters": {
+    "options": { "component": "index-page" }
+  },
+  "stories": [
+    {
+      "name": "Default",
+      "parameters": {
+        "server": { "id": "index-page-default" }
+      }
+    }
+  ]
+}

@@ -15,6 +15,12 @@ docs:
 swag:
 	cd ${TARGET} && swag init -d ./,./controllers
 
+storybook-dep:
+	cd ./server/storybook && npm i
+
+storybook:
+	cd ./server/storybook && npm run storybook
+
 test:
 	go test ./... -v
 
@@ -26,7 +32,7 @@ watch:
 	tailwindcss -i ./server/public/input.css -o ./server/public/dist/output.css --watch
 
 dev:
-	go run ${TARGET} -swag
+	go run ${TARGET} -swag -storybook
 
 build:
 	GOARCH=amd64 GOOS=darwin go build -o ${BINARY_NAME}-darwin ${TARGET}

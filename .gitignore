@@ -3,3 +3,5 @@ my.db.lock
 coverage.html
 coverage.out
 **/docs/
+**/node_modules/
+**/package-lock.json

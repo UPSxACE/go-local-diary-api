@@ -25,6 +25,7 @@ import (
 func main() {
 	// Define a flag named "swag" with a default value of false
 	swagFlag := flag.Bool("swag", false, "Run swagger route")
+	storybookFlag := flag.Bool("storybook", false, "Run storybook preview route")
 	flag.Parse()
 
 
@@ -70,6 +71,11 @@ func main() {
 
 	// Echo instance
 	e := echo.New()
+	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+		AllowOrigins: []string{"http://localhost:1323", "http://localhost:6006"},
+		AllowHeaders: []string{"*"},
+		// echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept
+	  }))
 
 	// Middleware
 	e.Use(middleware.Logger())
@@ -85,6 +91,9 @@ func main() {
 
 	if(*swagFlag){
 		e.GET("/swagger/*", echoSwagger.WrapHandler)
+	} 
+	if(*storybookFlag){
+		controllers.SetStorybookPreviewRoutes(e)
 	} 
 
 	// Start server
