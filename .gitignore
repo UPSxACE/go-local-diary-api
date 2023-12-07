@@ -2,3 +2,4 @@ my.db
 my.db.lock
 coverage.html
 coverage.out
+**/docs/
