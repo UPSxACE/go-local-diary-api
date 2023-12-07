@@ -31,9 +31,16 @@ test-coverage:
 watch:
 	tailwindcss -i ./server/public/input.css -o ./server/public/dist/output.css --watch
 
+webpack-dep:
+	cd ./server/webpack && npm i
+
+webpack:
+	cd ./server/webpack && npm run build
+
 dev:
 	go run ${TARGET} -swag -storybook
 
+#still need to add code to compile tailwind, and webpack
 build:
 	GOARCH=amd64 GOOS=darwin go build -o ${BINARY_NAME}-darwin ${TARGET}
 	GOARCH=amd64 GOOS=linux go build -o ${BINARY_NAME}-linux ${TARGET}
