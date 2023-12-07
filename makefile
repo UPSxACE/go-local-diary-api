@@ -9,8 +9,14 @@ endif
 dep:
 	go mod tidy
 
+docs:
+	godoc -http=:6060
+
+swag:
+	cd ${TARGET} && swag init -d ./,./controllers
+
 test:
-	go test ./...
+	go test ./... -v
 
 test-coverage:
 	go test ./... -coverprofile=coverage.out
@@ -20,7 +26,7 @@ watch:
 	tailwindcss -i ./server/public/input.css -o ./server/public/dist/output.css --watch
 
 dev:
-	go run ${TARGET}
+	go run ${TARGET} -swag
 
 build:
 	GOARCH=amd64 GOOS=darwin go build -o ${BINARY_NAME}-darwin ${TARGET}

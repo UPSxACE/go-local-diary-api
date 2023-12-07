@@ -1,6 +1,12 @@
+// @title Swagger Example API
+// @version 1.0
+// @description Is this even working?
+// @host localhost:1323
+
 package main
 
 import (
+	"flag"
 	"fmt"
 	"html/template"
 	"log"
@@ -11,9 +17,17 @@ import (
 	"github.com/boltdb/bolt"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
+
+	_ "github.com/UPSxACE/go-local-diary-api/server/docs"
+	echoSwagger "github.com/swaggo/echo-swagger" // echo-swagger middleware
 )
 
 func main() {
+	// Define a flag named "swag" with a default value of false
+	swagFlag := flag.Bool("swag", false, "Run swagger route")
+	flag.Parse()
+
+
 	// Open the my.db data file in your current directory.
 	// It will be created if it doesn't exist.
 	db, err := bolt.Open("my.db", 0600, &bolt.Options{Timeout: 1 * time.Second})
@@ -68,6 +82,10 @@ func main() {
 
 	// Routes
 	controllers.SetIndexRoutes(e)
+
+	if(*swagFlag){
+		e.GET("/swagger/*", echoSwagger.WrapHandler)
+	} 
 
 	// Start server
 	e.Logger.Fatal(e.Start(":1323"))

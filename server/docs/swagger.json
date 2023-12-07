@@ -1,0 +1,55 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Is this even working?",
+        "title": "Swagger Example API",
+        "contact": {},
+        "version": "1.0"
+    },
+    "host": "localhost:1323",
+    "paths": {
+        "/": {
+            "get": {
+                "description": "Renders home page",
+                "produces": [
+                    "text/html"
+                ],
+                "tags": [
+                    "/ route"
+                ],
+                "summary": "Home page",
+                "responses": {
+                    "200": {
+                        "description": "Rendered page successefully"
+                    }
+                }
+            }
+        },
+        "/htmx/change-message": {
+            "post": {
+                "description": "Updates message in home page",
+                "produces": [
+                    "text/html"
+                ],
+                "tags": [
+                    "/ route"
+                ],
+                "summary": "Change message",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Name that will be in the new message",
+                        "name": "name",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Updated message successefully"
+                    }
+                }
+            }
+        }
+    }
+}

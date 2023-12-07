@@ -1,0 +1,36 @@
+host: localhost:1323
+info:
+  contact: {}
+  description: Is this even working?
+  title: Swagger Example API
+  version: "1.0"
+paths:
+  /:
+    get:
+      description: Renders home page
+      produces:
+      - text/html
+      responses:
+        "200":
+          description: Rendered page successefully
+      summary: Home page
+      tags:
+      - / route
+  /htmx/change-message:
+    post:
+      description: Updates message in home page
+      parameters:
+      - description: Name that will be in the new message
+        in: formData
+        name: name
+        required: true
+        type: string
+      produces:
+      - text/html
+      responses:
+        "200":
+          description: Updated message successefully
+      summary: Change message
+      tags:
+      - / route
+swagger: "2.0"
