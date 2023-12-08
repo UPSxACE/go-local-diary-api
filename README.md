@@ -1,4 +1,4 @@
-#Requirements:
+# Requirements:
 - Golang
 - Godoc
 - Swaggo/swag
@@ -7,7 +7,7 @@
 - Node for @storybook/server-webpack5, and for webpack
 - Git bash or simillar (to build, and for some other commands too)
 
-#How to:
+# How to:
 1. First time running after clone
 1.1. make dep
 1.2. make storybook-dep
