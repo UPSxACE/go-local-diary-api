@@ -7,66 +7,66 @@
 - Node for @storybook/server-webpack5, and for webpack
 - Git bash or simillar (to build, and for some other commands too)
 
-#How to:
-<ol>
+# How to:
+<ol type="1">
   <li>First time running after clone
-    <ol>
+    <ul>
       <li>make dep</li>
       <li>make storybook-dep</li>
       <li>make webpack-dep</li>
-    </ol>
+    </ul>
   </li>
 
   <li>Run development mode
-    <ol>
+    <ol type="1">
       <li>In one CMD do: (tailwind, with live reload)
-        <ol>
+        <ul>
           <li>make tailwind-watch</li>
-        </ol>
+        </ul>
       </li>
       <li>In a second CMD do: (storybook)
-        <ol>
+        <ul>
           <li>make storybook</li>
-        </ol>
+        </ul>
       </li>
       <li>In a third CMD do: (webpack, with live reload)
-        <ol>
+        <ul>
           <li>make webpack-watch</li>
-        </ol>
+        </ul>
       </li>
       <li>In a fourth CMD do: (server, with live reload)
-        <ol>
+        <ul>
           <li>air</li>
-        </ol>
+        </ul>
       </li>
       <li>In a fifth CMD do: (go docs)
-        <ol>
+        <ul>
           <li>make docs</li>
-        </ol>
+        </ul>
       </li>
       <li>In a sixth CMD do: (swagger ui)
-        <ol>
+        <ul>
           <li>make swag</li>
-        </ol>
+        </ul>
       </li>
     </ol>
   </li>
 
   <li>Alternative for running in development mode
-    <ol>
+    <ol type="1">
       <li>In case you don't need any chat inputs, you can run all commands above at once using:
-        <ol>
+        <ul>
           <li>go run ./dev-script</li>
-        </ol>
+        </ul>
       </li>
     </ol>
   </li>
 
   <li>Compile for production mode
-    <ol>
+    <ul>
       <li>make build</li>
       <li>(copy the files needed to another directory)</li>
       <li>make clean</li>
-    </ol>
+    </ul>
   </li>
 </ol>
