@@ -63,7 +63,7 @@
 ## Alternative for running in development mode
 <ul>
   <li>
-    In case you don't need to read any command line output, you can run all commands above at once using:
+    In case you don't mind the output being all mixed, you can run all commands above at once using:
     <ul>
       <li>go run ./dev-script</li>
     </ul>
