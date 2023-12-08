@@ -24,31 +24,26 @@
           <li>make tailwind-watch</li>
         </ol>
       </li>
-
       <li>In a second CMD do: (storybook)
         <ol>
           <li>make storybook</li>
         </ol>
       </li>
-
       <li>In a third CMD do: (webpack, with live reload)
         <ol>
           <li>make webpack-watch</li>
         </ol>
       </li>
-
       <li>In a fourth CMD do: (server, with live reload)
         <ol>
           <li>air</li>
         </ol>
       </li>
-
       <li>In a fifth CMD do: (go docs)
         <ol>
           <li>make docs</li>
         </ol>
       </li>
-
       <li>In a sixth CMD do: (swagger ui)
         <ol>
           <li>make swag</li>
